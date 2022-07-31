@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -31,5 +33,13 @@ public class ExpenseService {
         expenseRepository.save(expense);
 
         return expense;
+    }
+    public List<Expense> findAll(){
+        return expenseRepository.findAll();
+    }
+    public Expense findById(Long id){
+        Optional<Expense> expense = expenseRepository.findById(id);
+
+        return expense.orElseThrow(RuntimeException::new);
     }
 }
