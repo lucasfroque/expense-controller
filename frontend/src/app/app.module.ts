@@ -10,6 +10,11 @@ import { ExpenseListComponent } from './components/expense-list/expense-list.com
 import localePt from '@angular/common/locales/pt';
 import { ExpenseInfoComponent } from './components/expense-info/expense-info.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { ExpenseCreateCardComponent } from './components/expense-create-card/expense-create-card.component';
+import { CurrencyMaskModule } from 'ng2-currency-mask';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 registerLocaleData(localePt)
 
@@ -19,14 +24,18 @@ registerLocaleData(localePt)
     AppComponent,
     ExpenseListComponent,
     ExpenseInfoComponent,
-    SidebarComponent
+    SidebarComponent,
+    ExpenseCreateCardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CurrencyMaskModule,
+    MatDialogModule,
+    BrowserAnimationsModule
   ],
   providers: [{provide: LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent]

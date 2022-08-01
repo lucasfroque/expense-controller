@@ -1,17 +1,29 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import '~bootstrap-icons/font/bootstrap-icons';
 
+html, body {
+  height: 100%;
+}
 
-body { 
-    margin: 0; 
-    background-color: var(--body);
-    color: var(--text-body);
-  }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: var(--body);
+  color: var(--text-body);
+}
+
+.app-full-bleed-dialog .mat-dialog-container {
+  padding: 0;
+  background-color: transparent;
+  text-decoration: none;
+  box-sizing: 0;
+  box-shadow: none;
+}
 
 :root {
-    --primary: #9c27b0;
-    --white: #f0f8ff;
-    --body: #333333;
-    --text-body: #ffff;
-    --text-button: white;
-  }
+  --primary: #9c27b0;
+  --white: #f0f8ff;
+  --body: #333333;
+  --text-body: #ffff;
+  --text-button: white;
+}

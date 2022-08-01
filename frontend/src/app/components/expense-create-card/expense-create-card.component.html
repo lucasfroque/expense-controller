@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="d-flex flex-column">
+        <div class="d-flex justify-content-center" id="title">
+          <h1 class="display-6">Despesa</h1>
+        </div>
+        <div class="d-flex justify-content-center" id="title">
+          <p class="lead m-0">Acrescentar nova despesa</p>
+      </div>
+      <hr class="my-2">
+  
+      <form #expenseForm="ngForm" (ngSubmit)="onSubmit(expenseForm)">
+        <div class="d-flex flex-column mt-4">
+  
+          <div class="d-flex flex-row mb-4">
+            <div class="form-group col-md-6 me-2">
+              <label for="description" class="form-label">Nome da despesa</label>
+              <input type="text" class="form-control" name="description" ngModel placeholder="Ex: Internet">
+            </div>
+              <div class="form-group col-md-6">
+                <label for="firstPaymentDate" class="form-label">Vencimento</label>
+                <input type="date" class="form-control" name="firstPaymentDate" ngModel>
+              </div>
+          </div>
+  
+          <div class="d-flex flex-row">
+            <div class="form-group col-md-6 me-2">
+              <label for="expenseValue" class="form-label">R$ Valor</label>
+              <input currencyMask [options]="{prefix: 'R$ ', thousands: '.', decimal:',', align: 'left'}" type="text"
+                class="form-control justify-content-start" name="expenseValue" ngModel placeholder="Ex: R$ 500">
+            </div>
+    
+            <div class="form-group col-md-6">
+              <label for="numberInstallment" class="form-label">Numero de parcelas</label>
+              <input type="number" class="form-control" name="numberInstallment" ngModel placeholder="Ex: 5">
+            </div>
+          </div>
+          <div class="d-flex justify-content-center mt-4">
+            <button type="submit" class="btn btn-dark">Adicionar</button>
+          </div>
+        </div>
+      </form>
+  
+  </div>
