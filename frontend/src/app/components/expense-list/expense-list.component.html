@@ -1,0 +1,35 @@
+<div class="container topbar d-flex flex-column my-3">
+
+    <div class="d-flex mb-2">
+      <input [(ngModel)]="filter.descriptionFilter" (ngModelChange)="findAll()" class="item-filter form-control me-2" placeholder="Filtrar por nome">
+      <input [(ngModel)]="filter.dateFilter" (ngModelChange)="findAll()" type="month" class="item-filter form-control">
+    </div>
+    <button class="btn mb-3 btn-add d-flex">+Add despesa</button>
+</div>
+
+<div class="container rounded border">
+    <table class="table table-dark border my-3">
+      <thead>
+        <tr>
+          <th class="text-center" scope="col">Descrição</th>
+          <th class="text-center" scope="col">Valor</th>
+          <th class="text-center" scope="col">Parcelas</th>
+          <th class="text-center" scope="col">Vencimento</th>
+          <th class="text-center" scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let expenses of expenseList">
+          <td class="text-center" scope="row"> {{expenses.description}} </td>
+          <td class="text-center"> {{expenses.expenseValue| currency:'BRL'}} </td>
+          <td class="text-center"> {{getAumountInstallmentsPaid(expenses.id)}}/{{expenses.numberInstallment}} </td>
+          <td class="text-center"> {{expenses.firstPaymentDate | date: 'dd/MM/yyyy'}} </td>
+          <td class="text-center">
+            <a class="btn btn-primary btn-sm mx-2">Ver mais</a>
+            <button (click)="payFirstInstallment(expenses.id)" class="btn btn-success btn-sm">Pagar</button>
+            <button (click)="deleteExpense(expenses.id)" class="btn btn-danger btn-sm mx-2">Deletar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

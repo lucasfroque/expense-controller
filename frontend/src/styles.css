@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+body { 
+    margin: 0; 
+    background-color: var(--body);
+    color: var(--text-body);
+  }
+
+:root {
+    --primary: #9c27b0;
+    --white: #f0f8ff;
+    --body: #333333;
+    --text-body: #ffff;
+    --text-button: white;
+  }

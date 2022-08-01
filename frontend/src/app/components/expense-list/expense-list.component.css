@@ -1,0 +1,14 @@
+.topbar{
+    align-items: center;
+}
+.btn-add{
+    color: var(--text-button);
+    background-color: var(--primary);
+}
+::placeholder{
+    color: var(--text-body)
+}
+.item-filter{
+    background: transparent;
+    color: var(--text-body)
+}
