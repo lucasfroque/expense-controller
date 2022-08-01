@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { ExpenseListComponent } from './components/expense-list/expense-list.component';
 import localePt from '@angular/common/locales/pt';
 import { ExpenseInfoComponent } from './components/expense-info/expense-info.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 registerLocaleData(localePt)
 
@@ -17,7 +18,8 @@ registerLocaleData(localePt)
   declarations: [
     AppComponent,
     ExpenseListComponent,
-    ExpenseInfoComponent
+    ExpenseInfoComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
