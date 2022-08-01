@@ -42,4 +42,10 @@ public class ExpenseController {
         List<Expense> obj = expenseService.findAll();
         return ResponseEntity.ok().body(obj);
     }
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Void> response(@PathVariable Long id){
+        expenseService.deleteById(id);
+        return ResponseEntity.noContent().build();
+    }
+
 }

@@ -42,4 +42,7 @@ public class ExpenseService {
 
         return expense.orElseThrow(RuntimeException::new);
     }
+    public void deleteById(Long id){
+        expenseRepository.deleteById(id);
+    }
 }
