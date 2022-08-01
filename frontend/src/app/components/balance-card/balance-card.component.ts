@@ -12,7 +12,7 @@ import { ExpenseService } from 'src/app/services/expense.service';
 })
 export class BalanceCardComponent implements OnInit {
 
-  balance!: Balance;
+  balance: Balance = new Balance; 
   date!: string[];
   filter = this.expenseService.getFilter;
   monthNames: String[] = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
