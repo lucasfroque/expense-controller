@@ -1,24 +1,43 @@
 .sidebar {
-    height: 100vmin;
-    width: auto;
-  }
-  
-  .sidebar-content {
-    height: 100%;
-  }
-  
-  .nav-item:hover {
-    cursor: pointer;
-  }
-  
-  .active {
-    background-color: var(--primary) !important;
-  }
-  
-  .active .nav-link {
-    color: #fff;
-  }
-  
-  .nav-link {
-    color: var(--primary);
-  }
+  height: 100vmin;
+  width: auto;
+}
+
+.sidebar-content {
+  height: 100%;
+}
+
+.nav-item:hover {
+  cursor: pointer;
+}
+
+.active {
+  background-color: var(--primary) !important;
+}
+
+.active .nav-link {
+  color: #fff;
+}
+
+.nav-link {
+  color: var(--primary);
+}
+
+.balance-card {
+  background-color: var(--primary);
+  margin-left: 10px;
+  min-width: 405px;
+  height: 184px;
+  width: fit-content;
+  font-size: 14px;
+  border-radius: 10px;
+}
+
+
+.create-expense-card{
+  background-color: var(--primary);
+  margin-left: 10px;
+  width: 400px;
+  height: 350px;
+  border-radius: 5px;
+}

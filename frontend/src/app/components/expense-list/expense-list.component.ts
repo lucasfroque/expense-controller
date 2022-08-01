@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Expense } from 'src/app/models/expense';
 import { ExpenseService } from 'src/app/services/expense.service';
 import { InstallmentService } from 'src/app/services/installment.service';
+import { SidebarService } from 'src/app/services/sidebar.service';
 
 @Component({
   selector: 'app-expense-list',
@@ -13,7 +14,7 @@ export class ExpenseListComponent implements OnInit {
   expenseList: Expense[] = [];
   expense!: Expense;
 
-  constructor(private expenseService: ExpenseService, private installmentService: InstallmentService) { }
+  constructor(private expenseService: ExpenseService, private installmentService: InstallmentService, private sidebarService: SidebarService) { }
 
   filter = this.expenseService.getFilter;
 
@@ -67,4 +68,7 @@ export class ExpenseListComponent implements OnInit {
       this.expenseList = this.expenseService.doFilter(this.expenseList);
   }
 
+  toggleItem(item: string){
+    this.sidebarService.toggleItem(item);
+  }
 }

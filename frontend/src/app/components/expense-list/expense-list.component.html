@@ -4,7 +4,7 @@
       <input [(ngModel)]="filter.descriptionFilter" (ngModelChange)="findAll()" class="item-filter form-control me-2" placeholder="Filtrar por nome">
       <input [(ngModel)]="filter.dateFilter" (ngModelChange)="findAll()" type="month" class="item-filter form-control">
     </div>
-    <button class="btn mb-3 btn-add d-flex">+Add despesa</button>
+    <button (click)="toggleItem('showCreateExpense')" class="btn mb-3 btn-add d-flex">+Add despesa</button>
 </div>
 
 <div class="container rounded border">

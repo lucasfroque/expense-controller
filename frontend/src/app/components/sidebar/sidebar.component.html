@@ -5,23 +5,30 @@
       <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
         <!-- BUTTONS -->
         <li class="nav-item">
-          <a  [ngClass]="{'nav-link active py-3 border-bottom': true}">
+          <a (click)="toggleItem('showHome')" [ngClass]="{'nav-link py-3 border-bottom': true, 'active': showItem.includes('showHome')}">
             <i class="bi bi-house-door"></i>
           </a>
         </li>
   
         <li class="nav-item">
-          <a  [ngClass]="{'nav-link py-3 border-bottom': true}">
+          <a (click)="toggleItem('showBalance')" [ngClass]="{'nav-link py-3 border-bottom': true, 'active': showItem.includes('showBalance')}">
             <i class="bi bi-wallet"></i>
           </a>
         </li>
   
         <li class="nav-item">
-          <a  [ngClass]="{'nav-link py-3 border-bottom': true}">
+          <a (click)="toggleItem('showCreateExpense')" [ngClass]="{'nav-link py-3 border-bottom': true, 'active': showItem.includes('showCreateExpense')}">
             <i class="bi bi-file-earmark-plus"></i>
           </a>
         </li>
           <!-- BUTTONS -->
       </ul>
+    </div>
+    <div [ngClass]="{'d-flex balance-card mt-2': true, 'd-none': !showItem.includes('showBalance'), 'show': showItem.includes('showBalance')}">
+      <app-balance-card style="width: 100%; height: 100%;"></app-balance-card>
+    </div>
+  
+    <div [ngClass]="{'d-flex create-expense-card container noselect mt-2': true, 'd-none': !showItem.includes('showCreateExpense'), 'show': showItem.includes('showCreateExpense')}">
+      <app-expense-create-card></app-expense-create-card>
     </div>
   </div>

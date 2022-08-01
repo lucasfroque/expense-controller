@@ -15,7 +15,7 @@ export class BalanceCardComponent implements OnInit {
   balance!: Balance;
   date!: string[];
   filter = this.expenseService.getFilter;
-  monthNames: String[] = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Septembro", "Outubro", "Novembro", "Dezembro"];
+  monthNames: String[] = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
   currentExpenseValue: number = 0;
 
   constructor(private balanceService: BalanceService, private expenseService: ExpenseService) { }
