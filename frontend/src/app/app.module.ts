@@ -14,6 +14,7 @@ import { ExpenseCreateCardComponent } from './components/expense-create-card/exp
 import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
+import { BalanceCardComponent } from './components/balance-card/balance-card.component';
 
 
 registerLocaleData(localePt)
@@ -25,7 +26,8 @@ registerLocaleData(localePt)
     ExpenseListComponent,
     ExpenseInfoComponent,
     SidebarComponent,
-    ExpenseCreateCardComponent
+    ExpenseCreateCardComponent,
+    BalanceCardComponent
   ],
   imports: [
     BrowserModule,

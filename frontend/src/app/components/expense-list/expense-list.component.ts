@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Expense } from 'src/app/models/expense';
-import { Filter } from 'src/app/models/filter';
-import { Installment } from 'src/app/models/installments';
 import { ExpenseService } from 'src/app/services/expense.service';
 import { InstallmentService } from 'src/app/services/installment.service';
 
@@ -14,9 +12,11 @@ export class ExpenseListComponent implements OnInit {
 
   expenseList: Expense[] = [];
   expense!: Expense;
-  filter = new Filter()
 
   constructor(private expenseService: ExpenseService, private installmentService: InstallmentService) { }
+
+  filter = this.expenseService.getFilter;
+
 
   ngOnInit(): void {
     this.findAll();
@@ -64,7 +64,7 @@ export class ExpenseListComponent implements OnInit {
   }
   
   doFilter(){
-      this.expenseList = this.expenseService.doFilter(this.expenseList, this.filter);
+      this.expenseList = this.expenseService.doFilter(this.expenseList);
   }
 
 }

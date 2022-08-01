@@ -10,6 +10,7 @@ import { Filter } from '../models/filter';
 export class ExpenseService{
 
   private baseUrl = "http://localhost:8080/api"
+  private filter = new Filter();
 
   constructor(private httpClient: HttpClient) { }
   
@@ -40,13 +41,16 @@ export class ExpenseService{
     return date;
     }
 
-  doFilter(expenseList: Expense[], filter:Filter){
-      if(filter.descriptionFilter != ""){
-        expenseList = expenseList.filter((expense:Expense) => expense.description.toLowerCase().indexOf(filter.descriptionFilter.toLowerCase()) > -1)
+  doFilter(expenseList: Expense[]){
+      if(this.filter.descriptionFilter != ""){
+        expenseList = expenseList.filter((expense:Expense) => expense.description.toLowerCase().indexOf(this.filter.descriptionFilter.toLowerCase()) > -1)
       }
-      if(filter.dateFilter != ""){
-        expenseList = expenseList.filter((expense:Expense) => this.formatDate(expense.firstPaymentDate.toString()) == this.formatDate(filter.dateFilter.toString()));
+      if(this.filter.dateFilter != ""){
+        expenseList = expenseList.filter((expense:Expense) => this.formatDate(expense.firstPaymentDate.toString()) == this.formatDate(this.filter.dateFilter.toString()));
       }
     return expenseList;
+  }
+  public get getFilter(){
+    return this.filter;
   }
 }

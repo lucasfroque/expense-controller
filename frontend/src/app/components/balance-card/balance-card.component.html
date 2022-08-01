@@ -1,0 +1,29 @@
+<div class="container flex-column mt-2 flex-nowrap">
+    <div class="d-flex flex-row balance-card-title noselect">
+
+        <p style="font-size: 18px; color: white;"><i style="color: black; margin-top: 100px;" class="bi bi-credit-card"></i> Resumo
+            das despesas</p>
+        <p style="font: 12px; color: #cccccc;"><i class="bi bi-dot"></i>De: {{getDate()}}</p>
+    </div>
+    <div class="balance-card-value d-flex flex-row noselect">
+        <i class="bi bi-dot" style="color: #73e600;"></i>
+        <div class="flex-column">
+            <p>{{balance.balance | currency:'BRL'}}</p>
+            <p style="color:  #cccccc !important;">Saldo total</p>
+        </div>
+
+        <i style="color:  #00e6e6;" class="bi bi-dot"></i>
+        <div class="flex-column">
+            <p>{{currentExpenseValue | currency:'BRL'}}</p>
+            <p style="color: #cccccc !important;">Despesa atual</p>
+        </div>
+
+        <i style="color: #e67e00;" class="bi bi-dot"></i>
+        <div class="flex-column">
+            <p>{{balance.totalExpense | currency:'BRL'}}</p>
+            <p style="color:  #cccccc !important;">Despesa total</p>
+        </div>
+    </div>
+    <div class="balance-linebar align-items-end">
+    </div>
+</div>

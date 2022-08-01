@@ -1,0 +1,41 @@
+
+.balance-card-title{
+    align-items: center;
+}
+.balance-card-items {
+    width: 100%;
+    padding-top: 10px;
+    padding-left: 10px;
+    color: #fff;
+}
+
+.balance-linebar {
+    align-content: flex-end;
+    background-color: #fff;
+    width: 100%;
+    height: 5px;
+}
+
+.balance-card-value {
+    padding-top: 30px;
+    padding-bottom: 35px;
+}
+
+.balance-card-value p {
+    margin: 0px !important;
+    color: white;
+}
+
+.balance-card-value i {
+    padding-top: 5px !important;
+    font-size: 30px;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
