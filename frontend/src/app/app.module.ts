@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ExpenseListComponent } from './components/expense-list/expense-list.component';
 import localePt from '@angular/common/locales/pt';
+import { ExpenseInfoComponent } from './components/expense-info/expense-info.component';
 
 registerLocaleData(localePt)
 
@@ -15,7 +16,8 @@ registerLocaleData(localePt)
 @NgModule({
   declarations: [
     AppComponent,
-    ExpenseListComponent
+    ExpenseListComponent,
+    ExpenseInfoComponent
   ],
   imports: [
     BrowserModule,

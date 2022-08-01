@@ -1,0 +1,23 @@
+<div class="container rounded border">
+    <table class="table table-dark border">
+      <thead>
+        <tr>
+          <th scope="col">Status</th>
+          <th scope="col">Vencimento</th>
+          <th scope="col">PAGAR</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let installments of installmentList">
+          <td class="text"> {{ installments.status == "WAITING_PAYMENT" ? "AGUARDANDO PAGAMENTO" : "PAGO" }} </td>
+          <td class="text"> {{installments.paymentDate | date: 'dd/MM/yyyy'}} </td>
+          <td class="text">
+            <button (click)="payInstallment(installments.id)" [ngClass]=" installments.status == 'WAITING_PAYMENT' ? 'btn btn-success btn-sm' :  'invisible' ">PAGAR</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="d-flex flex-column justify-content-center">
+      <button [routerLink]="['/expenses']" class="btn btn-secondary mb-3">Voltar</button>
+    </div>
+  </div>
