@@ -21,6 +21,7 @@ export class ExpenseService{
     return this.httpClient.get<Expense>(this.baseUrl + "/expenses/"+id);
   }
   create(expense: Expense): Observable<Expense>{
+    console.log(expense)
     return this.httpClient.post<Expense>(this.baseUrl + "/expenses", expense)
   }
   delete(id: number){
